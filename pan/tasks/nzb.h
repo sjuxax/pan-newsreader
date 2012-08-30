@@ -24,6 +24,7 @@
 #include <pan/data/data.h>
 #include <pan/usenet-utils/MersenneTwister.h>
 #include <unistd.h>
+#include <string>
 
 namespace pan
 {

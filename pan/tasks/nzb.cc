@@ -170,6 +170,10 @@ namespace
       }
       const StringView p (mc.path.empty() ? mc.fallback_path : StringView(mc.path));
       TaskArticle* a = new TaskArticle (mc.ranks, mc.gs, mc.a, mc.cache, mc.read, 0, TaskArticle::DECODE, p);
+      size_t found;
+      found = mc.a.subject.to_string().find(".par2");
+      if (found != std::string::npos)
+          mc.paused = "1";
       if (mc.paused == "1")
         a->set_start_paused(true);
       mc.tasks.push_back (a);
